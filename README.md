@@ -1,37 +1,73 @@
-## Welcome to GitHub Pages
+# (WIP) Phantom - Jekyll Theme
 
-You can use the [editor on GitHub](https://github.com/Protoaxis/protoaxis.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+A Jekyll version of the "Phantom" theme by [HTML5 UP](https://html5up.net/).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+![Phantom Theme](images/phantom.jpg "Phantom Theme")
 
-### Markdown
+# How to Use
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+For those unfamiliar with how Jekyll works, check out [https://jekyllrb.com/](https://jekyllrb.com/) for all the details, 
+or read up on just the basics of [front matter](https://jekyllrb.com/docs/frontmatter/), [writing posts](https://jekyllrb.com/docs/posts/), 
+and [creating pages](https://jekyllrb.com/docs/pages/).
 
-```markdown
-Syntax highlighted code block
+- **GitLab**: Simply fork this repository and start editing the `_config.yml` file!
+- **GitHub**: Fork this reposity and create a branch named `gh-pages`, then start editing the `_config.yml` file!
 
-# Header 1
-## Header 2
-### Header 3
+# Added Features
 
-- Bulleted
-- List
+I've integrated lots of nice Jekyll features into the theme, such as:
+* [Formspree.io](https://formspree.io/) contact form integration - just add your email to the `_config.yml` and it works!
+* Your social profiles are linked from usernames you enter in `_config.yml`. Only social profiles buttons you enter in `config.yml` show up on the site footer.
+* Site logo support - Easily set any image or [Font Awesome icon](http://fontawesome.io/icons/) as your logo. If you enter a Font Awesome icon class in `_config.yml` it will override the default image used as the site logo.
+* **Coming soon**: Featured images and thumbnails in front matter for the homepage posts grid.
+* **Coming soon**: Easy featured image settings in `_config.yml` - choose to have Jekyll use a set height for featured images or have it display the entire image, pushing the page content further down.
 
-1. Numbered
-2. List
+# Issues
 
-**Bold** and _Italic_ and `Code` text
+If you would like to report a bug, ask a question, request a feature, feel free to do so on [the GitLab repository](https://gitlab.com/andrewbanchich/phantom-jekyll-theme) and I will be more than happy to help!
 
-[Link](url) and ![Image](src)
+Alternatively, you can open an issue via email by emailing [incoming+andrewbanchich/phantom-jekyll-theme@incoming.gitlab.com](mailto:incoming+andrewbanchich/phantom-jekyll-theme@incoming.gitlab.com).
+
+The GitHub repository is simply a mirror of the GitLab repository.
+
+# Credits
+
+Original README from HTML5 UP:
+
+```
+Phantom by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+
+This is Phantom, a simple design built around a grid of large, colorful, semi-interactive
+image tiles (of which you can have as many or as few as you like). Makes use of some
+SVG and animation techniques I've been experimenting with on that other project of mine
+you may have heard about (https://carrd.co), and includes a handy generic page for whatever.
+
+Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
+you can use for pretty much whatever.
+
+(* = not included)
+
+AJ
+aj@lkn.io | @ajlkn
+
+
+Credits:
+
+	Demo Images:
+		Unsplash (unsplash.com)
+
+	Icons:
+		Font Awesome (fortawesome.github.com/Font-Awesome)
+
+	Other:
+		jQuery (jquery.com)
+		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
+		Misc. Sass functions (@HugoGiraudel)
+		Respond.js (j.mp/respondjs)
+		Skel (skel.io)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Protoaxis/protoaxis.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Repository [Jekyll logo](https://github.com/jekyll/brand) icon licensed under a [Creative Commons Attribution 4.0 International License](http://choosealicense.com/licenses/cc-by-4.0/).
