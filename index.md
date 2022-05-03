@@ -4,8 +4,8 @@ title: Home
 ---
 
 <header>
-<h1>Unique solutions for unique problems</h1>
-<p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
+<h1>Personalized IOT Solutions</h1>
+<p>We create custom solutions to make your home or business smarter. Our products and services are one off while maintaining a high quality look and feel</p>
 </header>
 
 {% include tiles.html %}
