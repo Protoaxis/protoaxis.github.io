@@ -1,0 +1,549 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Protoaxis – Original Design Manufacturer</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    .card.expandable {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .card.expandable i.fas:first-child {
+      margin-top: 0.4rem;
+      font-size: 1.5rem;
+      color: #4ca1af;
+    }
+    .card.expandable .expand-icon {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card.expandable .chevron-icon {
+      transition: transform 0.3s ease;
+    }
+    .card.expandable.active .chevron-icon {
+      transform: rotate(180deg);
+    }
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.2rem;
+      color: #666;
+      transition: transform 0.3s ease;
+    }
+    .card.expandable.active .expand-icon {
+      transform: rotate(180deg);
+    }
+    .card.expandable .details {
+      height: 0;
+      overflow: hidden;
+      transition: height 0.4s ease;
+    }
+    .card.expandable .details-inner {
+      padding-top: 1rem;
+      font-size: 0.95rem;
+      color: #333;
+    }
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      color: #333;
+    }
+    .card.expandable.active .details {
+      max-height: 300px;
+    }
+    * { box-sizing: border-box; }
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  background-color: #eaeef3;
+}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #1e2a38;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 1.2rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      background: linear-gradient(to right, #2c3e50, #4ca1af);
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #ff7e00;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #1e2a38;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .card i {
+      margin-right: 0.5rem;
+      color: #4ca1af;
+    }
+    .services .card, .portfolio .card {
+      display: flex;
+      align-items: center;
+    }
+    .services .card i, .portfolio .card i {
+      font-size: 1.5rem;
+      min-width: 30px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    form button {
+      padding: 0.75rem 1.5rem;
+      background: #1e2a38;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #2c3e50;
+    }
+    footer {
+      background: #1e2a38;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+  
+.contact-instructions {
+  max-width: 600px;
+  margin: 2rem auto 1rem auto;
+  text-align: left;
+  font-size: 1rem;
+  color: #444;
+}
+.contact-instructions ul {
+  margin: 0.5rem 0 0 1rem;
+  padding: 0;
+}
+.contact-instructions li {
+  margin-bottom: 0.4rem;
+}
+
+    .card.expandable {
+      align-items: flex-start;
+    }
+    .card.expandable i.fas {
+      margin-top: 0.4rem;
+      font-size: 1.5rem;
+      color: #4ca1af;
+      flex-shrink: 0;
+    }
+    .card.expandable > div {
+      flex-grow: 1;
+    }
+    </style>
+<style>
+    .card.expandable {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .card.expandable i.fas:first-child {
+      margin-top: 0.4rem;
+      font-size: 1.5rem;
+      color: #4ca1af;
+    }
+    .card.expandable .expand-icon {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card.expandable .chevron-icon {
+      transition: transform 0.3s ease;
+    }
+    .card.expandable.active .chevron-icon {
+      transform: rotate(180deg);
+    }
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.2rem;
+      color: #666;
+      transition: transform 0.3s ease;
+    }
+    .card.expandable.active .expand-icon {
+      transform: rotate(180deg);
+    }
+    .card.expandable .details {
+      height: 0;
+      overflow: hidden;
+      transition: height 0.4s ease;
+    }
+    .card.expandable .details-inner {
+      padding-top: 1rem;
+      font-size: 0.95rem;
+      color: #333;
+    }
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      color: #333;
+    }
+    .card.expandable.active .details {
+      max-height: 300px;
+    }
+    * { box-sizing: border-box; }
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  background-color: #eaeef3;
+}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #1e2a38;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 1.2rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      background: linear-gradient(to right, #2c3e50, #4ca1af);
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #ff7e00;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #1e2a38;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .card i {
+      margin-right: 0.5rem;
+      color: #4ca1af;
+    }
+    .services .card, .portfolio .card {
+      display: flex;
+      align-items: center;
+    }
+    .services .card i, .portfolio .card i {
+      font-size: 1.5rem;
+      min-width: 30px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    form button {
+      padding: 0.75rem 1.5rem;
+      background: #1e2a38;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #2c3e50;
+    }
+    footer {
+      background: #1e2a38;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+  
+.contact-instructions {
+  max-width: 600px;
+  margin: 2rem auto 1rem auto;
+  text-align: left;
+  font-size: 1rem;
+  color: #444;
+}
+.contact-instructions ul {
+  margin: 0.5rem 0 0 1rem;
+  padding: 0;
+}
+.contact-instructions li {
+  margin-bottom: 0.4rem;
+}
+</style></head>
+<body>
+<header>
+<h1>Protoaxis</h1>
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+<section class="hero">
+<h2>Innovative ODM Solutions for Your Business</h2>
+<p>From concept to creation, Protoaxis transforms your ideas into production-ready solutions.</p>
+<a class="cta-button" href="#contact">Get a Quote</a>
+</section>
+<section id="about">
+<h2 class="section-title">About Us</h2>
+<div class="card">
+<p>Protoaxis is a full-service Original Design Manufacturer (ODM) dedicated to transforming your ideas into scalable, market-ready products. We bring industrial-grade expertise in electronic design, prototyping, and mass production across industries including consumer electronics, IoT, and industrial automation.</p>
+</div>
+</section>
+<section class="services" id="services">
+<script>
+    function toggleExpandable(card) {
+      const allCards = document.querySelectorAll('.card.expandable');
+
+      allCards.forEach(c => {
+        const details = c.querySelector('.details');
+        if (c !== card) {
+          details.style.height = '0px';
+          c.classList.remove('active');
+        }
+      });
+
+      const details = card.querySelector('.details');
+      if (!card.classList.contains('active')) {
+        card.classList.add('active');
+        details.style.height = details.scrollHeight + 'px';
+      } else {
+        details.style.height = '0px';
+        card.classList.remove('active');
+      }
+    }
+
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.card.expandable.active .details').forEach(details => {
+        details.style.height = details.scrollHeight + 'px';
+      });
+    });
+  </script>
+<h2 class="section-title">Our Services</h2>
+<div class="card expandable" onclick="toggleExpandable(this)">
+<i class="fas fa-cube"></i>
+<span class="expand-icon">
+<svg class="chevron-icon" height="42" viewbox="0 0 24 24" width="42" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 10l5 5 5-5z" fill="currentColor"></path>
+</svg>
+</span>
+<div>
+<strong>Product Design:</strong> Comprehensive CAD, electronics, and enclosure design tailored to your application.
+    <div class="details"><div class="details-inner">Deliverables include schematic capture, PCB layout, 3D mechanical models, and thermal simulations — ready for seamless handoff to manufacturing.</div></div>
+</div>
+</div>
+<div class="card expandable" onclick="toggleExpandable(this)">
+<i class="fas fa-flask"></i>
+<span class="expand-icon">
+<svg class="chevron-icon" height="42" viewbox="0 0 24 24" width="42" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 10l5 5 5-5z" fill="currentColor"></path>
+</svg>
+</span>
+<div>
+<strong>Prototyping:</strong> Rapid 3D printing, PCB assembly, and test rigs to validate form and function.
+    <div class="details"><div class="details-inner">We offer fast-turnaround SLA/FDM printing and both manual and automated PCB assembly.</div></div>
+</div>
+</div>
+<div class="card expandable" onclick="toggleExpandable(this)">
+<i class="fas fa-industry"></i>
+<span class="expand-icon">
+<svg class="chevron-icon" height="42" viewbox="0 0 24 24" width="42" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 10l5 5 5-5z" fill="currentColor"></path>
+</svg>
+</span>
+<div>
+<strong>Mass Manufacturing:</strong> Scalable production with rigorous quality control and integrated supply chain support.
+    <div class="details"><div class="details-inner">Services include SMT coordination, injection molding, assembly SOP development, and global logistics.</div></div>
+</div>
+</div>
+<div class="card expandable" onclick="toggleExpandable(this)">
+<i class="fas fa-truck"></i>
+<span class="expand-icon">
+<svg class="chevron-icon" height="42" viewbox="0 0 24 24" width="42" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 10l5 5 5-5z" fill="currentColor"></path>
+</svg>
+</span>
+<div>
+<strong>Supply Chain:</strong> End-to-end logistics, sourcing, and fulfillment management.
+    <div class="details"><div class="details-inner">We handle BOM cost optimization, vendor selection, customs documentation, and shipping oversight.</div></div>
+</div>
+</div>
+<div class="card expandable" onclick="toggleExpandable(this)">
+<i class="fas fa-headset"></i>
+<span class="expand-icon">
+<svg class="chevron-icon" height="42" viewbox="0 0 24 24" width="42" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 10l5 5 5-5z" fill="currentColor"></path>
+</svg>
+</span>
+<div>
+<strong>After-Sales:</strong> Post-deployment services including warranty handling, firmware maintenance, RMA processing, and end-user training materials.
+    <div class="details"></div>
+</div>
+</div>
+</section>
+<section class="portfolio" id="portfolio">
+<h2 class="section-title">Portfolio</h2>
+<div class="card"><i class="fas fa-plug"></i><div><strong>Smart Home Controller:</strong> WiFi-enabled light switch with touch interface, OTA firmware updates, and compact dual-layer PCB design.</div></div>
+<div class="card"><i class="fas fa-microchip"></i><div><strong>Industrial Sensor Node:</strong> Long-range, ultra-low power LoRaWAN sensor platform in a ruggedized enclosure, optimized for remote monitoring applications.</div></div>
+</section>
+<section id="contact">
+<h2 class="section-title">Contact Us</h2>
+<div class="card"><div class="contact-instructions">
+<p>To help us respond efficiently, please include:</p>
+<ul>
+<li>Brief project overview</li>
+<li>Target industry or application</li>
+<li>Services needed (e.g., design, prototyping, production)</li>
+<li>Estimated production quantity</li>
+<li>Expected timeline or launch date</li>
+<li>Optional: budget range or reference files/links</li>
+</ul>
+</div><form onsubmit="submitForm(event)">
+<label for="name">Name</label>
+<input id="name" required="" type="text"/>
+<label for="email">Email</label>
+<input id="email" required="" type="email"/>
+<label for="message">Message</label>
+<textarea id="message" required="" rows="5"></textarea>
+<button type="submit">Send Message</button>
+</form>
+<p id="form-response" style="color: green; display: none;">Thank you! We'll be in touch soon.</p>
+</div>
+</section>
+<footer>
+<p>© 2025 Protoaxis LLC. All rights reserved.</p>
+</footer>
+<script>
+    function submitForm(event) {
+      event.preventDefault();
+      document.getElementById('form-response').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('form-response').style.display = 'none';
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
